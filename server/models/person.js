@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var personSchema = new Schema({
     name: {type: String, required: true},
     location: String,
-    birthDate: {type: Date, default: new Date()}
+    // birthDate: {type: Date, default: new Date()}
 });
     // optional
     // {
