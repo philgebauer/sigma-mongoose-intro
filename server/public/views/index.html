@@ -14,35 +14,35 @@
 <div class="container" ng-controller="PeopleController as peeps">
     <h1 class='jumbotron'>Mongo / Mongoose</h1>
     <div class="row">
-        <div class="col-md-12">
-            <form>
+        <div class="form-group col-md-6 text-center">
+            <form class='col-md-12'>
                 <label for="name">Name: </label>
-                <input type="text" id="name" placeholder="Name"
+                <input type="text" id="name" class ="form-control" placeholder="Name"
                        ng-model="peeps.newPerson.name" />
 
-                <br / >
+
                 <label for="location">Location: </label>
-                <input type="text" id="location" placeholder="Location"
+                <input type="text" id="location" class ="form-control" placeholder="Location"
                        ng-model="peeps.newPerson.location" />
-                <br />
+
+
+              </div>
+              <div class ="form-group col-md-6 text-center">
 
                 <label for="birthdate">Birthdate: </label>
-                <input type="date" id="birthdate" placeholder="yyyy-mm-dd"
+                <input type="date" id="birthdate" class ="form-control" placeholder="yyyy-mm-dd"
                        ng-model="peeps.newPerson.birthDate" />
 
-                <br />
                 <label for="nicenessLevel">Niceness Level: </label>
-                <select ng-model="peeps.newPerson.nicenessLevel">
+                <select class ="form-control" ng-model="peeps.newPerson.nicenessLevel">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                 </select>
-
-                <br / >
-
-                <button class="btn" ng-click="peeps.addPerson()">Add Person</button>
+                  <button ng-click="peeps.addPerson()">Add Person</button>
+                </div>
             </form>
         </div>
     </div>

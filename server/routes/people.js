@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// bring in our mongoose model
 var Person = require('../models/person');
 
 router.post('/', function(req, res) {
@@ -67,5 +66,3 @@ router.delete('/:id', function(req, res) {
 
 
 module.exports = router;
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
