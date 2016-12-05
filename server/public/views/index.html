@@ -1,65 +1,66 @@
 
 <html lang="en">
 <head>
-    <title>Mongo / Mongoose</title>
-    <script type="text/javascript" src="/vendors/angular.min.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/people.controller.js"></script>
+  <title>Mongo / Mongoose</title>
+  <script type="text/javascript" src="/vendors/angular.min.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/people.controller.js"></script>
 
-    <link rel="stylesheet" href="/sytles/styles.css" />
-    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
 
 </head>
 <body ng-app="myApp">
-<div class="container" ng-controller="PeopleController as peeps">
+  <div class="container" ng-controller="PeopleController as peeps">
     <h1 class='jumbotron'>Mongo / Mongoose</h1>
     <div class="row">
-        <div class="form-group col-md-6 text-center">
-            <form class='col-md-12'>
-                <label for="name">Name: </label>
-                <input type="text" id="name" class ="form-control" placeholder="Name"
-                       ng-model="peeps.newPerson.name" />
+
+      <form class='col-md-12'>
+        <!-- <div class="form-group col-md-6 text-center"> -->
+          <label for="name">Name: </label>
+          <input type="text" id="name" class ="form-control" placeholder="Name"
+          ng-model="peeps.newPerson.name" />
 
 
-                <label for="location">Location: </label>
-                <input type="text" id="location" class ="form-control" placeholder="Location"
-                       ng-model="peeps.newPerson.location" />
+          <label for="location">Location: </label>
+          <input type="text" id="location" class ="form-control" placeholder="Location"
+          ng-model="peeps.newPerson.location" />
 
 
-              </div>
-              <div class ="form-group col-md-6 text-center">
+        <!-- </div>
+        <div class ="form-group col-md-6 text-center"> -->
 
-                <label for="birthdate">Birthdate: </label>
-                <input type="date" id="birthdate" class ="form-control" placeholder="yyyy-mm-dd"
-                       ng-model="peeps.newPerson.birthDate" />
+          <label for="birthdate">Birthdate: </label>
+          <input type="date" id="birthdate" class ="form-control" placeholder="yyyy-mm-dd"
+          ng-model="peeps.newPerson.birthDate" />
 
-                <label for="nicenessLevel">Niceness Level: </label>
-                <select class ="form-control" ng-model="peeps.newPerson.nicenessLevel">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                  <button ng-click="peeps.addPerson()">Add Person</button>
-                </div>
-            </form>
-        </div>
+          <label for="nicenessLevel">Niceness Level: </label>
+          <select class ="form-control" ng-model="peeps.newPerson.nicenessLevel">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <button ng-click="peeps.addPerson()">Add Person</button>
+        <!-- </div> -->
+      </form>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div ng-repeat="person in peeps.people" class="well col-md-3">
-                <p>{{ person.name }}</p>
-                <p>{{ person.location }}</p>
-                <p>{{ person.birthDate }}</p>
-                <p>{{ person.nicenessLevel }}</p>
-                <button ng-click="peeps.updatePerson(person._id)" class="btn btn-default">Update</button>
-                <button ng-click="peeps.deletePerson(person._id)" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-repeat="person in peeps.people" class="well col-md-3">
+        <p>{{ person.name }}</p>
+        <p>{{ person.location }}</p>
+        <p>{{ person.birthDate }}</p>
+        <p>{{ person.nicenessLevel }}</p>
+        <button ng-click="peeps.updatePerson(person._id)" class="btn btn-default">Update</button>
+        <button ng-click="peeps.deletePerson(person._id)" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 </body>

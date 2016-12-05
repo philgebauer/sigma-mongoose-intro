@@ -10,7 +10,9 @@ myApp.controller('PeopleController', ['$http', function($http) {
     function getData() {
         $http.get('/person')
             .then(function(response) {
+                    console.log(response);
                     self.people = response.data;
+                    console.log('self.people', self.people);
                 },
                 function(response) {
                     console.log('get error:', response);
@@ -21,11 +23,12 @@ myApp.controller('PeopleController', ['$http', function($http) {
     // add person
     self.addPerson = function() {
         console.log('add person');
+        console.log(self.newPerson);
         $http.post('/person', self.newPerson)
             .then(function(response) {
                     // getData();
                     self.people.push(response.data);
-                    console.log(response);
+                    // console.log(response);
                 },
                 function(response) {
                     console.log('post error:', response);
